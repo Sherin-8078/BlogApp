@@ -20,7 +20,7 @@ const Add = () => {
   const handleSubmit=(e)=>{
     e.preventDefault()
     if(location.state!=null){
-        axiosInstance.put('http://localhost:5000/blog/update/'+location.state.blog._id,blog)
+        axiosInstance.put('/blog/update/'+location.state.blog._id,blog)
         .then((res)=>{
           setBlog({
         title:"",
@@ -34,7 +34,7 @@ const Add = () => {
           console.error(err)
         })
     }else{
-      axiosInstance.post('http://localhost:5000/blog/add',blog)
+      axiosInstance.post('/blog/add',blog)
       .then((res)=>{
       setBlog({
         title:"",

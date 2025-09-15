@@ -14,7 +14,7 @@ const Blog = () => {
   const [blogs, setBlogs] = useState([])
 
   useEffect(() => {
-    axios.get('http://localhost:5000/blog')
+    axios.get('/api/blog')
       .then((res) => {
         setBlogs(res.data)
       })
@@ -25,7 +25,7 @@ const Blog = () => {
 
   const deleteBlog=(id)=>{
 
-    axiosInstance.delete('http://localhost:5000/blog/delete/'+id)
+    axiosInstance.delete('/blog/delete/'+id)
     .then((res)=>{
       window.location.reload();
     }

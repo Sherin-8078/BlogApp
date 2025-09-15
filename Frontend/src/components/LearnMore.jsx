@@ -11,7 +11,7 @@ const LearnMore = () => {
   const [blogs, setBlogs] = useState(null);
 
   useEffect(() => {
-    axios.get(`http://localhost:5000/blog/${id}`)   // interpolate id
+    axios.get(`/api/blog/${id}`)   // interpolate id
       .then((res) => {
         setBlogs(res.data);             // single blog, not array
       })
